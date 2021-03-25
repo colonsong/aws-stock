@@ -12,6 +12,9 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+.js('resources/js/bootstrap.js', 'public/js')
+.js('resources/js/vue-component.js', 'public/js')
+.js('resources/js/broadcasting.js', 'public/js')  /// 新增
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);

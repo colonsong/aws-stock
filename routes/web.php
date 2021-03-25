@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('fpm')->group(function () {
+    Route::get('chart/', [Fpm::class, 'index'])->middleware('web');
+    Route::get('chat/', [BroadcastingController::class, 'index'])->middleware('web');
+    Route::get('put/', [BroadcastingController::class, 'put'])->middleware('web');
+});
